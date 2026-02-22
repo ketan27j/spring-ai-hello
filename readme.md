@@ -53,14 +53,14 @@ graph TD
 export SPRING_AI_OPENAI_API_KEY='your_key_here'
 
 # Run the Spring Boot application
-./mvnw spring-boot:run
+./mvn spring-boot:run
 ```
 
 ### 2. Frontend Setup
 ```bash
 cd chatbot-ui
 npm install
-npm run dev
+npm run start
 ```
 The UI will be available at `http://localhost:3000`.
 
