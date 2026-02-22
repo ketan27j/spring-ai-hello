@@ -10,7 +10,7 @@ The system uses a **Function Calling** (ReAct) pattern where the LLM acts as an 
 
 ```mermaid
 graph TD
-    User([User]) <--> UI[Chat UI - Next.js]
+    User([User]) <--> UI[Chat UI]
     UI <--> API[Spring Boot API]
     API <--> LLM
     API <--> Tools{MCP Tools}
