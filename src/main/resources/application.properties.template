@@ -1,6 +1,6 @@
 spring.ai.openai.api-key=YOUR_API_KEY_HERE
 spring.ai.openai.base-url=https://openrouter.ai/api
-spring.ai.openai.chat.options.model=arcee-ai/trinity-large-preview:free
+spring.ai.openai.chat.options.model=openai/gpt-oss-120b:free
 server.port=8081
 
 spring.datasource.url=jdbc:mysql://YOUR_HOST:YOUR_PORT/YOUR_DATABASE?sslMode=REQUIRED

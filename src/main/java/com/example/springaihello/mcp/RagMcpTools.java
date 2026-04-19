@@ -11,8 +11,8 @@ import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.ai.tool.annotation.ToolParam;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SearchRequest;
-import org.springframework.ai.vectorstore.SimpleVectorStore;
-import org.springframework.beans.factory.annotation.Value;
+import com.example.springaihello.vector.MySqlVectorStore;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Service;
@@ -27,12 +27,12 @@ import java.util.stream.Collectors;
 public class RagMcpTools {
 
     private static final Logger logger = LoggerFactory.getLogger(RagMcpTools.class);
-    private final SimpleVectorStore vectorStore;
+    private final MySqlVectorStore vectorStore;
     private final EmbeddingModel embeddingModel;
 
-    public RagMcpTools(EmbeddingModel embeddingModel) {
+    public RagMcpTools(MySqlVectorStore vectorStore, EmbeddingModel embeddingModel) {
+        this.vectorStore = vectorStore;
         this.embeddingModel = embeddingModel;
-        this.vectorStore = SimpleVectorStore.builder(embeddingModel).build();
     }
 
     @PostConstruct
